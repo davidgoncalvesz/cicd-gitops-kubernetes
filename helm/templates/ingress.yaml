@@ -6,7 +6,8 @@ metadata:
     nginx.ingress.kubernetes.io/rewrite-target: /
 spec:
   rules:
-    - http:
+    - host: applinda.92.co.ucll.cloud
+      http:
         paths:
           - path: /
             pathType: Prefix
