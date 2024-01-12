@@ -1,6 +1,9 @@
 const express = require('express');
 const app = express();
 const port = 3000;
+const bodyParser = require('body-parser');
+const path = require('path'); // Add the 'path' module
+
 
 app.listen(port);
 console.log(`App running at http://localhost:${port}`);
@@ -10,7 +13,11 @@ app.get('/health', (req, res) => {
   res.status(200);
 });
 
+app.use(bodyParser.json());
+
+// Serve static files from the 'public' directory
+app.use(express.static(path.join(__dirname, 'public')));
+
 app.get('/', (req, res) => {
-  const name = process.env.NAME || 'World';
-  res.send(`so if you are seeing this, it's because the world is a better place. i hate my life, and this person should die: ${name}!`);
+  res.sendFile(path.join(__dirname, 'public', 'index.html'));
 });
