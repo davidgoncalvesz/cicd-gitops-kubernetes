@@ -12,5 +12,5 @@ app.get('/health', (req, res) => {
 
 app.get('/', (req, res) => {
   const name = process.env.NAME || 'World';
-  res.send(`so if you are seeing this, it's because the world is a better place. i hate my life, and this person should die: ${name}!`);
+  res.send(`hey, ${name}!`);
 });
