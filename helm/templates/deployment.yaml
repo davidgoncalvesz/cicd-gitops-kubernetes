@@ -16,7 +16,7 @@ spec:
         spec:
             containers:
                 - name: app
-                  image: davidgoncalvesz/app-helm:latest
+                  image: davidgoncalvesz/app-helm:latest-dev
                   ports:
                     - containerPort: 3001
                   env:
