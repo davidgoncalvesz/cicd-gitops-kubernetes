@@ -2,5 +2,5 @@ FROM node:16-alpine
 WORKDIR /src
 COPY app/ .
 RUN npm install --quiet
-EXPOSE 3000
+EXPOSE 3001
 CMD npm start
