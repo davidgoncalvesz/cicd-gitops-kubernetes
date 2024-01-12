@@ -16,7 +16,7 @@ spec:
         spec:
             containers:
                 - name: app
-                  image: davidgoncalvesz/app-helm:{{ .Values.image.tag }}
+                  image: davidgoncalvesz/app-helm:latest
                   ports:
                     - containerPort: 3000
                   env:
