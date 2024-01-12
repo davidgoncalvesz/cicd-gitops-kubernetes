@@ -10,7 +10,9 @@ app.get('/health', (req, res) => {
   res.status(200);
 });
 
+// Serve static files from the 'public' directory
+app.use(express.static(path.join(__dirname, 'public')));
+
 app.get('/', (req, res) => {
-  const name = process.env.NAME || 'World';
-  res.send(`hey, ${name}!`);
+  res.sendFile(path.join(__dirname, 'public', 'index.html'));
 });
